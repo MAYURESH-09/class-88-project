@@ -12,7 +12,7 @@ block_image_height = 5;
 
 function load_img()
 {
-	fabric.Image.fromUrl("golf-h.png",function(Img)
+	fabric.Image.fromURL("golf-h.png",function(Img)
 	{
 		hole_obj= Img ;
 		hole_obj.scaleToWidth(50);
@@ -28,14 +28,14 @@ function load_img()
 
 function new_image()
 {
-		fabric.Image.fromUrl("ball.png",function(Img)
+		fabric.Image.fromURL("ball.png",function(Img)
 		{
 			ball_obj= Img ;
 			ball_obj.scaleToWidth(50);
 			ball_obj.scaleToHeight(50);
 			ball_obj.set({
-				top:hole_y, 
-				left:hole_x
+				top:ball_y, 
+				left:ball_x
 			});
 			canvas.add(ball_obj);
 		});
@@ -83,6 +83,7 @@ if((ball_x==hole_x)&&(ball_y==hole_y))
         console.log("up key is pressed cureent x and y co-ordinates are" + ball_x +ball_y) ;
         canvas.remove(ball_obj) ;
         new_image() ;
+	}
 
 	function down()
 	{
@@ -114,4 +115,4 @@ if((ball_x==hole_x)&&(ball_y==hole_y))
 		}
 	}
 	}
-}
+
